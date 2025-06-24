@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.admin_app.EventsController">
+
+    <top>
+        <Label text="Event Management"
+               style="-fx-font-size: 24px; -fx-padding: 10; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER"/>
+
+        <Button fx:id="backButton"
+                text="⬅ Back"
+                onAction="#handleBackClick"
+                style="-fx-background-color: white; -fx-text-fill: #4CAF50; -fx-font-size: 12px; -fx-background-radius: 6; -fx-padding: 5 12;"/>
+
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TableView fx:id="eventTable" prefHeight="250">
+                <columns>
+                    <TableColumn text="Name" fx:id="colName"/>
+                    <TableColumn text="Start Date" fx:id="colStart"/>
+                    <TableColumn text="End Date" fx:id="colEnd"/>
+                    <TableColumn text="Image Link" fx:id="colImage"/>
+                    <TableColumn text="Description" fx:id="colDescription"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <TextField fx:id="nameField" promptText="Event Name"/>
+                <TextField fx:id="startField" promptText="Start Date (YYYY-MM-DD HH:MM:SS)"/>
+                <TextField fx:id="endField" promptText="End Date (YYYY-MM-DD HH:MM:SS)"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="imageField" promptText="Image Link" HBox.hgrow="ALWAYS"/>
+                <ImageView fx:id="previewImage" fitHeight="60" fitWidth="100" preserveRatio="true"/>
+            </HBox>
+
+            <TextField fx:id="descField" promptText="Description" maxWidth="Infinity"/>
+
+            <HBox spacing="10">
+                <Button text="Add Event" onAction="#addEvent"/>
+                <Button text="Modify Event" onAction="#modifyEvent"/>
+                <Button text="Delete Event" onAction="#deleteEvent"/>
+                <Button text="Refresh" onAction="#loadEvents"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

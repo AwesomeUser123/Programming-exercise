@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.admin_app.ChatDisplayController">
+
+    <left>
+        <VBox prefWidth="250" spacing="10" style="-fx-background-color: #f0f0f0;">
+            <padding>
+                <Insets top="15" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Messages" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <TextField fx:id="searchField" promptText="Search chats"/>
+            <ListView fx:id="userListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Header with user info, notification, and back button -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #4CAF50; -fx-padding: 10;">
+                <ImageView fx:id="userImage" fitWidth="40" fitHeight="40"/>
+                <Label fx:id="usernameLabel" text="User" style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="notificationButton"
+                        text="🔔"
+                        onAction="#onNotificationClick"
+                        style="-fx-background-color: white; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-background-radius: 50%; -fx-padding: 5 10;">
+                    <tooltip>
+                        <Tooltip text="View new messages"/>
+                    </tooltip>
+                </Button>
+
+
+                <Button fx:id="backButton"
+                        text="⬅ Back"
+                        onAction="#handleBackClick"
+                        style="-fx-background-color: white; -fx-text-fill: #4CAF50; -fx-font-size: 12px; -fx-background-radius: 6; -fx-padding: 5 12;"/>
+            </HBox>
+
+
+            <!-- Chat bubbles list -->
+            <ListView fx:id="chatListView" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;"/>
+
+            <!-- Input area -->
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="replyField" promptText="Type a message..." HBox.hgrow="ALWAYS"/>
+                <Button fx:id="sendButton" onAction="#onSendClick" text="Send" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
+
