@@ -9,8 +9,8 @@ export const book = (req,res) =>   {
 }
 
 export const unbook = (req,res) => {
-    const query = "UPDATE `webdev`.`reservations` SET `username` = NULL, `status` = 'available' WHERE (`table_id` = ?);"
-    db.query(query,[req.body.table_id],(err,data) =>{
+    const query = "UPDATE `webdev`.`reservations` SET `username` = NULL, `status` = 'available' WHERE (`table_id` = ? AND timestamp_slot = ?);"
+    db.query(query,[req.body.table_id, req.body.timestamp_slot],(err,data) =>{
     if (err) return res.status(500).json(err);
     return res.status(200).json("Unbooked successfully");    
     })
