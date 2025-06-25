@@ -1,0 +1,135 @@
+.register {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    /* Full-page background (sharp, no blur) */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat;
+      z-index: -1;
+    }
+  
+    .card {
+      width: 50%;
+      display: flex;
+      background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+      backdrop-filter: blur(5px); /* Slight blur on card */
+    }
+  
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+  
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      
+      p {
+        font-size: 1rem;
+        opacity: 0.8;
+        margin-bottom: 20px;
+      }
+      
+      span {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #573dff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+  
+        &:hover {
+          background: #432dbf;
+        }
+      }
+    }
+  
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+  
+        input {
+          padding: 12px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+  
+        button {
+          padding: 12px;
+          background: #573dff;
+          color: white;
+          font-size: 1rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.3s;
+  
+          &:hover {
+            background: #432dbf;
+          }
+        }
+      }
+    }
+    .error, .success {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .error {
+      color: #b10000;
+      background-color: #ffe5e5;
+      border: 1px solid #ffb3b3;
+    }
+
+    .success {
+      color: #005f1f;
+      background-color: #e1fbe1;
+      border: 1px solid #a3f3a3;
+    }
+
+  }
+  

@@ -1,0 +1,55 @@
+.profile-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .booking-card {
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    p {
+      margin: 0.2rem 0;
+    }
+
+    button {
+      background-color: #ff4d4f;
+      border: none;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #d9363e;
+      }
+    }
+  }
+}

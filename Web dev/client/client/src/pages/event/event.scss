@@ -1,0 +1,70 @@
+.event-page {
+  padding: 2rem;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  .back-btn {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #388e3c;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .event-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .event-info {
+      padding: 1rem;
+
+      h2 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+
+      p {
+        margin: 0.5rem 0;
+
+        &.description {
+          color: #555;
+        }
+      }
+    }
+  }
+}
